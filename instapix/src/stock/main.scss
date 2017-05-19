@@ -1,0 +1,151 @@
+body {
+  background-color: #fafafa;
+}
+
+.feeds {
+  margin-top: 48px;
+}
+
+.user_basic_info {
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+
+  .profile_picture {
+    margin-right: 12px;
+    flex-grow: 0;
+
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+    }
+  }
+
+  .details {        
+    flex-grow: 2;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .time {
+    color: #999999;
+    flex-grow: 0;
+  }
+}
+
+.post {
+  border: 1px solid #E6E6E6;
+  border-radius: 3px;
+  background: white;
+  margin-bottom: 45px;  
+
+  .image {
+    position: relative;
+
+    .like {
+      position: absolute;
+      color: white;
+      font-size: 5em;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+
+      &.show { 
+        opacity: 1;
+      }
+
+      &.hide {        
+        opacity: 0;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .post_details {
+    padding: 12px 15px;
+
+    [id^="comment_section"] {
+      a {
+        color: black;
+
+        &.delete {
+          color: #B3B3B3;
+        }
+
+        &:hover {
+          color: black;
+          text-decoration: none;
+        }
+      }
+
+      p {
+        display: flex;
+
+        strong {
+          flex-grow: 0;
+          margin-right: 4px;
+        }
+
+        .comment {
+          flex-grow: 2;
+        }
+        
+        .a {
+          flex-grow: 0;
+        }
+
+        .delete:before {
+          content: '\2715';
+        }
+      }     
+    }
+  }
+
+  [id^="user_action"] {
+    position: relative;
+    left: 0;
+    width: 100%;    
+    padding: 12px 0px;    
+    border-top: 1px solid #efefef;
+    display: flex;
+    align-items: center;
+
+    .new_comment {
+      display: inline-block;
+      margin-left: 12px;
+      flex-grow: 2;
+
+      .field {
+        margin: 0;
+      }
+      
+      .comment_input {
+        padding: 6px 12px;
+        width: 100%;
+        border: none;
+
+        &:focus {
+          outline-style: none;
+        }
+      }
+    }
+
+    [id^="like_button"] {
+      flex-grow: 0;
+      .glyphicon-heart {
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+      .liked {
+        color: #FF6666;
+      }
+      .unliked {
+        color: white;
+      }
+    }     
+  }
+}
