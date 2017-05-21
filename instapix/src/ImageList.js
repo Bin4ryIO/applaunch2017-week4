@@ -13,7 +13,7 @@ const ImageList = (props) => {
   /* A stateless component do not need a render method because it takes
     whatever is passed and display accordingly. */
   return (
-    <div className="ImageList">
+    <div>
       <ul>{imageItems}</ul>
     </div>
   );
