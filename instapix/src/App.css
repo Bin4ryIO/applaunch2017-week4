@@ -26,3 +26,28 @@ body {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.User-Basic-Info {
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+}
+.User-Basic-Info .Profile-Picture {
+  margin-right: 12px;
+  flex-grow: 0;
+}
+.User-Basic-Info .Profile-Picture img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.User-Basic-Info .Details {
+  flex-grow: 2;
+}
+.User-Basic-Info .Details p {
+  margin: 0;
+}
+.User-Basic-Info .Time {
+  color: #999999;
+  flex-grow: 0;
+}

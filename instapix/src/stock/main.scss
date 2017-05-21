@@ -6,12 +6,12 @@ body {
   margin-top: 48px;
 }
 
-.user_basic_info {
+.User-Basic-Info {
   padding: 12px 15px;
   display: flex;
   align-items: center;
 
-  .profile_picture {
+  .Profile-Picture {
     margin-right: 12px;
     flex-grow: 0;
 
@@ -22,7 +22,7 @@ body {
     }
   }
 
-  .details {        
+  .Details {        
     flex-grow: 2;
 
     p {
@@ -30,7 +30,7 @@ body {
     }
   }
 
-  .time {
+  .Time {
     color: #999999;
     flex-grow: 0;
   }
