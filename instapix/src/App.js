@@ -33,7 +33,7 @@ class App extends Component {
   /* Render components as following */
   render() {
     return (
-      <div className="container">
+      <div className="feeds col-xs-6 col-xs-offset-3">
         <ImageList images={this.state.images} />
       </div>
     );

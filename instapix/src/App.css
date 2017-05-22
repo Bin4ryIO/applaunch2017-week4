@@ -2,52 +2,125 @@ body {
   background-color: #fafafa;
 }
 
-.App {
-  text-align: center;
+.feeds {
+  margin-top: 48px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 30px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.User-Basic-Info {
+.profile {
   padding: 12px 15px;
   display: flex;
   align-items: center;
 }
-.User-Basic-Info .Profile-Picture {
+.profile .picture {
   margin-right: 12px;
   flex-grow: 0;
 }
-.User-Basic-Info .Profile-Picture img {
+.profile .picture img {
   width: 30px;
   height: 30px;
   border-radius: 100%;
 }
-.User-Basic-Info .Details {
+.profile .details {
   flex-grow: 2;
 }
-.User-Basic-Info .Details p {
+.profile .details p {
   margin: 0;
 }
-.User-Basic-Info .Time {
+.profile .time {
   color: #999999;
   flex-grow: 0;
+}
+
+.post {
+  border: 1px solid #E6E6E6;
+  border-radius: 3px;
+  background: white;
+  margin-bottom: 45px;
+}
+.post .image {
+  position: relative;
+}
+.post .image .like {
+  position: absolute;
+  color: white;
+  font-size: 5em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.post .image .like.show {
+  opacity: 1;
+}
+.post .image .like.hide {
+  opacity: 0;
+}
+.post .image img {
+  width: 100%;
+  height: auto;
+}
+.post .post_details {
+  padding: 12px 15px;
+}
+.post .post_details .comment a {
+  color: black;
+}
+.post .post_details .comment a.delete {
+  color: #B3B3B3;
+}
+.post .post_details .comment a:hover {
+  color: black;
+  text-decoration: none;
+}
+.post .post_details .comment p {
+  display: flex;
+}
+.post .post_details .comment p strong {
+  flex-grow: 0;
+  margin-right: 4px;
+}
+.post .post_details .comment p .comment {
+  flex-grow: 2;
+}
+.post .post_details .comment p .a {
+  flex-grow: 0;
+}
+.post .post_details .comment p .delete:before {
+  content: '\2715';
+}
+.post .comment_div {
+  position: relative;
+  left: 0;
+  width: 100%;
+  padding: 12px 0px;
+  border-top: 1px solid #efefef;
+  display: flex;
+  align-items: center;
+}
+.post .comment_div .new_comment {
+  display: inline-block;
+  margin-left: 12px;
+  flex-grow: 2;
+}
+.post .comment_div .new_comment .field {
+  margin: 0;
+}
+.post .comment_div .new_comment .comment_input {
+  padding: 6px 12px;
+  width: 100%;
+  border: none;
+}
+.post .comment_div .new_comment .comment_input:focus {
+  outline-style: none;
+}
+.post .comment_div .like_button {
+  flex-grow: 0;
+}
+.post .comment_div .like_button .glyphicon-heart {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.post .comment_div .like_button .liked {
+  color: #FF6666;
+}
+.post .comment_div .like_button .unliked {
+  color: white;
 }

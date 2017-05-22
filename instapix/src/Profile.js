@@ -2,16 +2,16 @@ import React from 'react';
 
 const Profile = (props) => {
   return (
-    <div className="User-Basic-Info">
-        <div className="Profile-Picture">
+    <div className="profile">
+        <div className="picture">
           <img src="https://octodex.github.com/images/grim-repo.jpg" alt="85"/>
         </div>
 
-        <div className="Details">
+        <div className="details">
           <p>kaii</p>
         </div>
 
-        <div className="Time">5m</div>
+        <div className="time">5m</div>
     </div>
   )
 };
