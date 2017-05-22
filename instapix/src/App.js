@@ -4,7 +4,7 @@
 
 /* Importing all the required Library and Files */
 import React, {Component} from 'react';
-import ImageList from './ImageList.js';
+import CommentList from './CommentList.js';
 import './App.css';
 
 
@@ -17,24 +17,51 @@ class App extends Component {
     /* An object (Array) list of Data for the Instagram App.
       From App component passing down as Props to Each Component.  */
     this.state = {
-      images: [
-        {
-          id: 1,
-          posted_by: 'Robert Downey Jr.',
-          url: 'http://images1.villagevoice.com/imager/u/original/6438169/8762051.0.jpg',
-          comments: {
-            'Gigi Hadid': 'Nice picture!'
-          }
-        }
-      ]
+      comments: [],
+      text: ''
     }
+    this.onChange = this.onChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  onChange(event) {
+    this.setState({
+      text: event.target.value,
+    });
+  }
+
+  handleSubmit(event) {
+    /* Prevent empty */
+    event.preventDefault();
+
+    /* Add Comment into Comments array */
+    let newComment = [{
+        text: this.state.text,
+        id: Date.now(),
+      },
+    ...this.state.comments
+    ];
+
+    this.setState({
+      comments: newComment,
+      text: '',
+    });
   }
 
   /* Render components as following */
   render() {
     return (
       <div className="container">
-        <ImageList images={this.state.images} />
+        <img src="https://placehold.it/300x300" alt="Hello" />
+
+        {/* Comment input form */}
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.onChange} value={this.state.text} />
+          <button>Submit</button>
+        </form>
+
+        {/* CommentList component declared in JSX style */}
+        <CommentList comments={ this.state.comments }></CommentList>
       </div>
     );
   }
