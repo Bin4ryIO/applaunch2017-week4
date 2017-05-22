@@ -61,30 +61,28 @@ body {
 .post .post_details {
   padding: 12px 15px;
 }
-.post .post_details .comment a {
+.comment a {
   color: black;
 }
-.post .post_details .comment a.delete {
+.comment a.delete {
   color: #B3B3B3;
 }
-.post .post_details .comment a:hover {
+.comment a:hover {
   color: black;
   text-decoration: none;
 }
-.post .post_details .comment p {
+.comment p {
   display: flex;
 }
-.post .post_details .comment p strong {
+.comment p strong {
   flex-grow: 0;
   margin-right: 4px;
 }
-.post .post_details .comment p .comment {
+.comment p .text {
   flex-grow: 2;
 }
-.post .post_details .comment p .a {
-  flex-grow: 0;
-}
-.post .post_details .comment p .delete:before {
+
+.comment p .delete:before {
   content: '\2715';
 }
 .post .comment_div {

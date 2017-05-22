@@ -4,14 +4,14 @@ const Profile = (props) => {
   return (
     <div className="profile">
         <div className="picture">
-          <img src="https://octodex.github.com/images/grim-repo.jpg" alt="85"/>
+          <img src={ props.user.image_url } alt="85"/>
         </div>
 
         <div className="details">
-          <p>kaii</p>
+          <p>{ props.user.name }</p>
         </div>
 
-        <div className="time">5m</div>
+        <div className="time">{ props.time }</div>
     </div>
   )
 };
