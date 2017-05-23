@@ -1,72 +1,39 @@
-/*
-  AppLaunch 2017 Week 5 - InstaPix
-*/
-
-/* Importing all the required Library and Files */
-import React, {Component} from 'react';
-import CommentList from './CommentList.js';
+import React, { Component } from 'react';
 import './App.css';
 
 
-/* Declaring the Component name, in this case, App is the Main (Top) component */
 class App extends Component {
 
   constructor(props) {
-    /* This means allowing data from Parent */
     super(props);
-    /* An object (Array) list of Data for the Instagram App.
-      From App component passing down as Props to Each Component.  */
     this.state = {
-      comments: [],
-      text: ''
     }
-    this.onChange = this.onChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  onChange(event) {
-    this.setState({
-      text: event.target.value,
-    });
-  }
-
-  handleSubmit(event) {
-    /* Prevent empty */
-    event.preventDefault();
-
-    /* Add Comment into Comments array */
-    let newComment = [{
-        text: this.state.text,
-        id: Date.now(),
-      },
-    ...this.state.comments
-    ];
-
-    this.setState({
-      comments: newComment,
-      text: '',
-    });
-  }
-
-  /* Render components as following */
   render() {
     return (
-      <div className="container">
-        <img src="https://placehold.it/300x300" alt="Hello" />
+      <div className="card">
+        <div className="card-poster">
+          <span className="card-poster__like">420</span>
+        </div>
 
-        {/* Comment input form */}
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.onChange} value={this.state.text} />
-          <button>Submit</button>
-        </form>
+        <div className="card-text">
+          <div className="card-meta">
+             <span className="card-meta__caption">When they strike, we light up the world</span>
+          </div>
 
-        {/* CommentList component declared in JSX style */}
-        <CommentList comments={ this.state.comments }></CommentList>
+          {/* Your journey start here */}
+          <button className="card-text__button">Like</button>
+          <div className="card-text__input">
+            <form>
+              <input placeholder="Add a comment" />
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
 
 }
 
-/* Declaring the name of this component */
 export default App;

@@ -1,0 +1,116 @@
+// Variables
+
+$gutter: .25em;
+$radius: .25em;
+$font: 'Roboto', Arial, sans-serif;
+
+// Setup
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+*,
+*:before,
+*:after {
+   box-sizing: inherit;
+}
+
+html {
+   box-sizing: border-box;
+}
+
+body {
+   background: #f0f0f0;
+   color: #535353;
+   font-family: 'Roboto', sans-serif;
+   line-height: 1.8;
+}
+
+// Container
+
+.card {
+   background: white;
+   border-radius: $radius;
+   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+   margin: 2em auto;
+   max-width: 500px;
+   overflow: hidden;
+}
+
+// Card: Image
+
+.card-poster {
+   background-color: #eaeaea;
+   background-image: url('http://i.imgur.com/gX4ybDh.png');
+   background-position: center;
+   background-size: cover;
+   height: 420px;
+   position: relative;
+   &__like {
+      background: #da4980;
+      border-radius: 50%;
+      color: white;
+      display: inline-block;
+      font-weight: 700;
+      line-height: 2.75em;
+      position: absolute;
+      right: .5em;
+      text-align: center;
+      top: .5em;
+      width: 2.75em;
+   }
+}
+
+// Card: Text
+
+.card-text {
+padding: 2em 0;
+text-align: center;
+   &__paragraph {
+      margin: 0 auto 1.8rem auto;
+      max-width: 300px;
+   }
+   &__button {
+      background-color: #fff;
+      border: .15em solid #E66C9B;
+      border-radius: $radius;
+      color: #E66C9B;
+      display: inline-block;
+      font-weight: 700;
+      padding: .5em 4em;
+      text-decoration: none;
+      transition: .15s all ease-in-out;
+      &:hover {
+         background: #F094B8;
+         border-color: #E66C9B;
+         color: white;
+      }
+      &:active {
+        background: #F094B8;
+        border-color: #F094B8;
+      }
+   }
+   &__input {
+     margin: 2em 0;
+   }
+   &__input input {
+     border: none;
+     border-bottom: 2px solid #F094B8;
+     width: 60%;
+     text-align: center;
+     padding: 10px;
+   }
+   &__input input:focus {
+     outline: none;
+     border-bottom: 2px solid #E66C9B;
+   }
+}
+
+// Meta
+
+.card-meta {
+   color: #666;
+   font-weight: 700;
+   letter-spacing: .0825em;
+   margin: 0em 2.5em 1.8em 2.5em;
+   text-transform: uppercase;
+}
